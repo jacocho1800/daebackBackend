@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productName": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "etc": {
+      "type": "string"
+    },
+    "sendOption": {
+      "type": "enumeration",
+      "enum": [
+        "now",
+        "keep"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "address": {
+      "type": "string"
+    },
+    "addressInfo": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "payment": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "no"
+    },
+    "delivery": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "no"
+    },
+    "orderDate": {
+      "type": "date"
+    }
+  }
+}
